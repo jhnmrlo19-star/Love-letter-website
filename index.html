@@ -64,15 +64,29 @@ display:none;
 }
 
 .envelope:hover{
-transform:translateY(-8px);
+  transform:translateY(-8px) scale(1.01);
 }
 
 .base{
-position:absolute;
-width:100%;
-height:100%;
-background:#ff7ea3;
-border-radius:0 0 10px 10px;
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:linear-gradient(180deg,#ffd6e6,#ffb3cf);
+  border-radius:0 0 14px 14px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.6);
+  overflow:hidden;
+}
+
+.paper{
+  position:absolute;
+  left:10px;
+  right:10px;
+  top:18px;
+  bottom:14px;
+  background:linear-gradient(180deg,#ffffff,#fff9fb);
+  border-radius:8px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  transform:translateY(6px);
 }
 
 .flap{
@@ -86,6 +100,26 @@ border-radius:0 0 10px 10px;
   transform-style:preserve-3d;
   transition:transform .6s cubic-bezier(.2,.8,.25,1), box-shadow .2s;
   animation:float 2s infinite ease-in-out;
+}
+
+.flap{ /* add subtle border and texture */
+  background:linear-gradient(180deg,#ff6ea0,#ff4d88);
+  border-top-left-radius:8px;
+  border-top-right-radius:8px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+}
+
+.seal{
+  position:absolute;
+  left:50%;
+  top:42%;
+  width:46px;
+  height:46px;
+  transform:translateX(-50%);
+  background:radial-gradient(circle at 35% 30%,#ffd1d9,#ff6b86 60%);
+  border-radius:50%;
+  box-shadow:0 4px 12px rgba(0,0,0,0.12), inset 0 -4px 8px rgba(255,255,255,0.25);
+  border:2px solid rgba(255,255,255,0.25);
 }
 
 @keyframes float{
@@ -345,8 +379,12 @@ opacity:0;
 <h1>A Letter For You Bebii❤️</h1>
 
 <div class="envelope">
-<div class="base"></div>
-<div class="flap"></div>
+  <div class="base">
+    <div class="paper"></div>
+  </div>
+  <div class="flap">
+    <div class="seal"></div>
+  </div>
 </div>
 
 <div class="pin-box">
