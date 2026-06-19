@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Love Story ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ffd6e0,#fff5f7);
+overflow-x:hidden;
+min-height:100vh;
+}
+
+.screen{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+height:100vh;
+padding:20px;
+text-align:center;
+}
+
+.envelope{
+position:relative;
+width:280px;
+height:180px;
+cursor:pointer;
+transition:.5s;
+}
+
+.envelope:hover{
+transform:translateY(-8px);
+}
+
+.base{
+position:absolute;
+width:100%;
+height:100%;
+background:#ff7ea3;
+border-radius:0 0 10px 10px;
+}
+
+.flap{
+position:absolute;
+top:0;
+width:100%;
+height:100%;
+background:#ff5f8f;
+clip-path:polygon(0 0,100% 0,50% 60%);
+transform-origin:top;
+animation:float 2s infinite ease-in-out;
+}
+
+@keyframes float{
+50%{
+transform:translateY(-8px);
+}
+}
+
+h1{
+font-family:'Dancing Script',cursive;
+color:#d6336c;
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.pin-box{
+margin-top:30px;
+}
+
+input{
+padding:12px;
+border:none;
+border-radius:12px;
+font-size:18px;
+text-align:center;
+width:180px;
+}
+
+button{
+padding:12px 24px;
+border:none;
+border-radius:12px;
+background:#ff4d88;
+color:white;
+font-weight:bold;
+margin-top:15px;
+cursor:pointer;
+}
+
+button:hover{
+background:#e63b74;
+}
+
+.hidden{
+display:none;
+}
+
+.letter-page{
+padding:40px 20px;
+max-width:900px;
+margin:auto;
+animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.letter{
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.letter h2{
+font-family:'Dancing Script',cursive;
+font-size:2.5rem;
+color:#d6336c;
+margin-bottom:20px;
+}
+
+.letter p{
+line-height:1.9;
+font-size:18px;
+color:#444;
+}
+
+.timeline{
+margin-top:50px;
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:20px;
+}
+
+.memory{
+background:white;
+padding:25px;
+border-radius:24px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.memory-photo{
+min-height:190px;
+border-radius:18px;
+background:linear-gradient(135deg,rgba(255,255,255,.75),rgba(255,125,160,.17));
+display:flex;
+align-items:center;
+justify-content:center;
+color:#9f2158;
+font-size:1.15rem;
+font-weight:700;
+text-align:center;
+box-shadow:inset 0 0 0 1px rgba(255,255,255,.55);
+overflow:hidden;
+}
+
+.memory-photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:18px;
+}
+
+.memory h3{
+margin:0;
+color:#d6336c;
+font-size:1.35rem;
+}
+
+.memory p{
+font-size:15px;
+margin:0;
+color:#564a57;
+line-height:1.7;
+}
+
+.end-message{
+text-align:center;
+padding:50px 0;
+}
+
+.end-message h2{
+font-family:'Dancing Script',cursive;
+font-size:3rem;
+color:#d6336c;
+margin-bottom:12px;
+}
+
+.heart{
+position:fixed;
+font-size:20px;
+animation:rise 6s linear infinite;
+opacity:.75;
+pointer-events:none;
+}
+
+@media(max-width:920px){
+.letter-page{
+padding:30px 16px;
+}
+
+.timeline{
+grid-template-columns:1fr;
+}
+}
+
+@media(max-width:640px){
+body{
+background:linear-gradient(180deg,#ffd6e0,#fff5f7);
+}
+
+h1{
+font-size:2.4rem;
+}
+
+.pin-box input{
+width:100%;
+}
+
+button{
+width:100%;
+}
+
+.letter{
+padding:28px;
+}
+
+.memory{
+padding:20px;
+}
+
+.memory-photo{
+min-height:160px;
+font-size:1rem;
+}
+
+.end-message{
+padding:36px 0;
+}
+}
+
+@keyframes rise{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div id="lockScreen" class="screen">
+
+<h1>A Letter For You ❤️</h1>
+
+<div class="envelope">
+<div class="base"></div>
+<div class="flap"></div>
+</div>
+
+<div class="pin-box">
+<p>Enter our secret PIN</p>
+<input type="password" id="pin" placeholder="PIN">
+<br>
+<button onclick="openLetter()">Open My Heart 💌</button>
+</div>
+
+</div>
+
+<div id="lovePage" class="hidden">
+
+<div class="letter-page">
+
+<div class="letter">
+
+<h2>To My Bebii ❤️</h2>
+
+<p>
+My Bebii Panda,
+
+If you're reading this, you've unlocked one of my favorite places—
+the story of us.
+
+Every smile, every adventure, every laugh, every late-night
+conversation became memories I treasure deeply.
+
+Thank you for choosing me every day.
+Thank you for making ordinary moments feel magical.
+
+No matter where life takes us, my favorite place will always be
+right beside you.
+
+I love you endlessly.
+❤️
+</p>
+
+</div>
+
+<div class="timeline">
+
+<div class="memory">
+<div class="memory-photo"><img src="images/Messenger_creation_9311832E-F1A5-4608-80D4-36B77F978CA6.jpeg" alt="Our First Date"></div>
+<h3>Our First Date</h3>
+<p>The day my favorite story began, when we first laughed together.</p>
+</div>
+
+<div class="memory">
+<div class="memory-photo"><img src="images/IMG_20260224_054138_401.jpg" alt="First Adventure Together"></div>
+<h3>First Adventure Together</h3>
+<p>A memory I'll cherish forever: every look, every shared smile.</p>
+</div>
+
+<div class="memory">
+<div class="memory-photo">Our Special Celebration</div>
+<h3>Our Special Celebration</h3>
+<p>Every moment with you feels special, warm, and full of love.</p>
+</div>
+
+<div class="memory">
+<div class="memory-photo">Favorite Memory</div>
+<h3>Favorite Memory</h3>
+<p>One of many beautiful chapters we've written together.</p>
+</div>
+
+<div class="memory">
+<div class="memory-photo">Another Adventure</div>
+<h3>Another Adventure</h3>
+<p>And many more to come — each one better than the last.</p>
+</div>
+
+</div>
+
+<div class="end-message">
+<h2>Forever & Always ❤️</h2>
+<p>
+Thank you for being my greatest adventure.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const SECRET_PIN = "0719";
+
+function openLetter(){
+
+const entered = document.getElementById("pin").value;
+
+if(entered === SECRET_PIN){
+
+document.getElementById("lockScreen").style.display="none";
+document.getElementById("lovePage").classList.remove("hidden");
+
+startHearts();
+
+}else{
+
+alert("Wrong PIN ❤️ Try again.");
+}
+}
+
+function startHearts(){
+
+setInterval(()=>{
+
+const heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML=["❤️","💕","💖","💗"][Math.floor(Math.random()*4)];
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(15+Math.random()*25)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+},300);
+}
+
+</script>
+
+</body>
+</html>
