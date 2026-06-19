@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Love Story ❤️</title>
+<title>11th Monthsary❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -280,9 +280,14 @@ opacity:0;
 
 <body>
 
+<audio id="loveMusic" preload="auto">
+  <source src="music/Lover.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
 <div id="lockScreen" class="screen">
 
-<h1>A Letter For You ❤️</h1>
+<h1>A Letter For You Bebii❤️</h1>
 
 <div class="envelope">
 <div class="base"></div>
@@ -348,13 +353,13 @@ Happy 11th Monthsary! I love you endlessly.
 </div>
 
 <div class="memory">
-<div class="memory-photo">Favorite Memory</div>
+<div class="memory-photo"><img src="images/IMG_20260617_142947_012.jpg" alt="Favorite Memory"></div>
 <h3>Favorite Memory</h3>
 <p>One of many beautiful chapters we've written together.</p>
 </div>
 
 <div class="memory">
-<div class="memory-photo">Another Adventure</div>
+<div class="memory-photo"><img src="images/IMG_20260426_200631_410.jpg" alt="Another Adventure"></div>
 <h3>Another Adventure</h3>
 <p>And many more to come — each one better than the last.</p>
 </div>
@@ -362,7 +367,7 @@ Happy 11th Monthsary! I love you endlessly.
 </div>
 
 <div class="end-message">
-<h2>Forever & Always ❤️</h2>
+<h2>Together, Forever & Always ❤️</h2>
 <p>
 Thank you for being my greatest adventure.
 </p>
@@ -384,6 +389,10 @@ if(entered === SECRET_PIN){
 
 document.getElementById("lockScreen").style.display="none";
 document.getElementById("lovePage").classList.remove("hidden");
+
+var audio=document.getElementById("loveMusic");
+audio.currentTime=0;
+audio.play().catch(function(e){console.log("Autoplay blocked",e);});
 
 startHearts();
 
